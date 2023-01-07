@@ -28,6 +28,10 @@ const conversions = {
     },
     kW: {
         W:1/1000,
+    },
+    s: {
+        yr:1
+
     }
 
 }
