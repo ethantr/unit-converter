@@ -1,0 +1,54 @@
+.wrapper {
+    font-family: 'Roboto';
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    color:white
+}
+
+.values-form input {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    font-family: 'Roboto';
+    height: 3em;
+    font-size: 32px;
+    flex-shrink: 0;
+    background-color: rgba(255, 110, 139, 0.632);
+    border: 0;
+    color: white;
+}
+.units{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    width:5rem;
+}
+
+.final-value-box{
+    margin :3rem auto;
+    width:100px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color: rgba(237, 220, 200, 0.829);
+    color: black;
+    font-size: xx-large;
+}
+
+.values-form {
+    width:auto;
+    font-family: 'Roboto';
+    justify-content: center;
+    display: flex;
+    align-items: stretch; 
+    grid-gap:10px;
+    /* grid-template-columns: 25rem 6rem 25rem 6rem */
+}
+
+
+body {
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1530128118208-89f6ce02b37b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80");
+    
+}
