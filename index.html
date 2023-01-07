@@ -17,16 +17,25 @@
     <script src="./conversions.js"></script>
     <script src="script.js" async defer></script>
     <div class="wrapper">
-        <h1>Unit Convert This</h1>
+        <h1>Convert Some Numbers</h1>
         <div class="values-form">
-            <input id="value" placeholder="Value">
-            <input class="units" id="unit-from" placeholder="Unit">
-            <input id="final-value" placeholder="Value">
+            <input id="value" placeholder="Target Value">
+            <input list="units" class="units" id="unit-from" placeholder="Unit">
+            <input id="final-value" placeholder="Result Value">
             <input class="units" id="unit-to" placeholder="Unit">
+
         </div>
-        <div id = "final-value-box" class="final-value-box">
+        <div id="final-value-box" class="final-value-box">
             <h3>Convert</h3>
         </div>
+
+        <datalist id="units">
+            <!-- <option value="km">
+            <option value="m">
+            <option value="mpc">
+            <option value="W">
+            <option value="kW"> -->
+        </datalist>
     </div>
 
 

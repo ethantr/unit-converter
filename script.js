@@ -3,16 +3,17 @@
 
 function convertLength(value, fromUnit, toUnit) {
 
-    if(fromUnit === toUnit){
+    if (fromUnit === toUnit) {
         return value;
     }
 
     const conversion = conversions[fromUnit][toUnit];
 
     if (conversion) {
+        console.log(value*conversion)
         return value * conversion;
     } else {
-        return"";
+        return "";
     }
 }
 
@@ -34,8 +35,8 @@ const finalValueHandler = function (e) {
     var fromUnit = unitsFromInput.value;
     var toUnit = unitsToInput.value;
 
-    var conversion = convertLength(initial, toUnit, fromUnit).toPrecision(2)
-
+    var conversion = convertLength(initial, toUnit, fromUnit)
+    
     initialValue.value = conversion;
     conversionOutput()
 }
@@ -44,7 +45,6 @@ const fromInputHandler = function (e) {
     var initial = finalValue.value;
     var fromUnit = e.target.value;
     var toUnit = unitsToInput.value;
-    console.log(initial,toUnit,fromUnit)
     var conversion = convertLength(initial, toUnit, fromUnit)
 
     initialValue.value = conversion;
@@ -55,7 +55,6 @@ const toInputHandler = function (e) {
     var initial = initialValue.value;
     var fromUnit = unitsFromInput.value;
     var toUnit = e.target.value;
-    resultBox.innerHTML = "<h2>I am here</h2>"
 
     var conversion = convertLength(initial, fromUnit, toUnit)
 
@@ -86,12 +85,27 @@ var finalValue = document.getElementById('final-value')
 
 var resultBox = document.getElementById('final-value-box');
 
+var unitsList = document.getElementById('units')
+
 
 initialValue.addEventListener('input', initialValueHandler);
 finalValue.addEventListener('input', finalValueHandler);
 
 unitsFromInput.addEventListener('input', fromInputHandler);
 unitsToInput.addEventListener('input', toInputHandler);
+
+
+createUnitOptions();
+
+function createUnitOptions() {
+    for (var prop in conversions) {
+        if (conversions.hasOwnProperty(prop))
+            var option = document.createElement("option");
+        option.value = prop;
+        unitsList.appendChild(option)
+    }
+}
+
 
 
 
