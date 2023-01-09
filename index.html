@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Convert Some Numbers - Online Multi-Unit Converter</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
@@ -19,24 +19,34 @@
     <div class="wrapper">
         <h1>Convert Some Numbers</h1>
         <div class="values-form">
-            <input id="value" placeholder="Target Value">
-            <input list="units" class="units" id="unit-from" placeholder="Unit">
-            <input id="final-value" placeholder="Result Value">
-            <input class="units" id="unit-to" placeholder="Unit">
+            <div class="input-box">
+                <input id="value" placeholder="Target Value">
+                <input list="units" class="units" id="unit-from" placeholder="Unit">
+            </div>
+            <div class="input-box">
+                <input id="final-value" placeholder="Result Value">
+                <input list="units" class="units" id="unit-to" placeholder="Unit">
+            </div>
+
+
 
         </div>
         <div id="final-value-box" class="final-value-box">
-            <h3>Convert</h3>
+            <h3>Enter values to get conversion!</h3>
         </div>
 
         <datalist id="units">
-            <!-- <option value="km">
-            <option value="m">
-            <option value="mpc">
-            <option value="W">
-            <option value="kW"> -->
+
         </datalist>
+
+        
     </div>
+
+    <footer id = "footer">
+        <h6>Copyright Ethan Teber-Rossi 2023</h6>
+    </footer>
+
+   
 
 
 </body>
