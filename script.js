@@ -10,7 +10,7 @@ function convertLength(value, fromUnit, toUnit) {
     const conversion = conversions[fromUnit][toUnit];
 
     if (conversion) {
-        console.log(value*conversion)
+        console.log(value * conversion)
         return value * conversion;
     } else {
         return "";
@@ -36,7 +36,7 @@ const finalValueHandler = function (e) {
     var toUnit = unitsToInput.value;
 
     var conversion = convertLength(initial, toUnit, fromUnit)
-    
+
     initialValue.value = conversion;
     conversionOutput()
 }
@@ -63,14 +63,37 @@ const toInputHandler = function (e) {
 }
 
 
-function conversionOutput() {
+function addEntry() {
+
+    var text = createConversionText()
+    if (text.includes("NaN")){
+        console.error("Invalid")
+        return;
+    }
+    var entry = createConversionContainer(text)
+    entry_container.appendChild(entry)
+}
+
+function createConversionText() {
     var initialVal = parseFloat(initialValue.value);
     var finalVal = parseFloat(finalValue.value);
     var fromUnit = unitsFromInput.value;
     var toUnit = unitsToInput.value;
-    resultBox.innerHTML = "<h2>" + initialVal + " " + fromUnit + " = " + finalVal + " " + toUnit + "</h2>";
+    return initialVal + " " + fromUnit + " = " + finalVal + " " + toUnit;
 }
 
+function conversionOutput() {
+    resultBox.textContent = createConversionText()
+}
+
+function createConversionContainer(text) {
+    var newEntry = document.createElement('div');
+    newEntry.className = "entry"
+    var conversion_text = document.createElement('h4')
+    conversion_text.textContent = text;
+    newEntry.appendChild(conversion_text)
+    return newEntry;
+}
 
 
 
@@ -86,6 +109,11 @@ var finalValue = document.getElementById('final-value')
 var resultBox = document.getElementById('final-value-box');
 
 var unitsList = document.getElementById('units')
+
+
+var entry_container = document.getElementById('entry-container')
+
+
 
 
 initialValue.addEventListener('input', initialValueHandler);
@@ -118,7 +146,7 @@ function convert() {
     var length = convertLength(value, fromUnit, toUnit)
 
     finalValue.value = length;
-    toValueBox.innerHTML = "<h3>" + length + " " + toUnit + "</h3>";
+    toValueBox.value = length + " " + toUnit;
 }
 
 
