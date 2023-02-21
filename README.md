@@ -12,3 +12,5 @@ Online converters are also tedious to setup, so I wanted something that would be
 
 Made this in half a day, so it's not the best but for what it's worth. At least I procrastinated.
 
+note please dont actually use this for real conversions it is wrong half of this is a joke
+
